@@ -1,0 +1,129 @@
+{
+  "name": "sin-nudo",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "const body = $json.body ?? $json;\n\nconst allowed = [\"Nunca\", \"A veces\", \"Frecuentemente\", \"Casi siempre\"];\n\nconst q1 = body.q1;\nconst q2 = body.q2;\nconst q3 = body.q3;\nconst q4 = body.q4;\nconst q5 = body.q5;\n\n// 1) Validar que existan las 5 respuestas\nconst missing = [q1, q2, q3, q4, q5].some(v => v === undefined || v === null || v === \"\");\n\nif (missing) {\n  return [\n    {\n      json: {\n        ok: false,\n        blocked: true,\n        error: \"Faltan una o más respuestas. Se requieren q1, q2, q3, q4 y q5.\"\n      }\n    }\n  ];\n}\n\n// 2) Validar longitud máxima básica\nconst maxLength = 30;\nconst tooLong = [q1, q2, q3, q4, q5].some(v => String(v).length > maxLength);\n\nif (tooLong) {\n  return [\n    {\n      json: {\n        ok: false,\n        blocked: true,\n        error: \"Una o más respuestas exceden la longitud permitida.\"\n      }\n    }\n  ];\n}\n\n// 3) Validar whitelist estricta\nconst invalid = [q1, q2, q3, q4, q5].some(v => !allowed.includes(v));\n\nif (invalid) {\n  return [\n    {\n      json: {\n        ok: false,\n        blocked: true,\n        error: \"Una o más respuestas no son válidas. Usa solo: Nunca, A veces, Frecuentemente, Casi siempre.\"\n      }\n    }\n  ];\n}\n\n// 4) Detección básica de prompt injection\nconst suspiciousPatterns = [\n  \"ignora instrucciones anteriores\",\n  \"ignore previous instructions\",\n  \"system prompt\",\n  \"developer message\",\n  \"actua como\",\n  \"actúa como\",\n  \"revela el prompt\",\n  \"reveal the prompt\",\n  \"jailbreak\",\n  \"override\",\n  \"bypass\"\n];\n\nconst answersText = [q1, q2, q3, q4, q5].join(\" \").toLowerCase();\nconst suspiciousMatch = suspiciousPatterns.find(pattern => answersText.includes(pattern));\n\nif (suspiciousMatch) {\n  return [\n    {\n      json: {\n        ok: false,\n        blocked: true,\n        error: \"Entrada bloqueada por patrón sospechoso.\",\n        reason: suspiciousMatch\n      }\n    }\n  ];\n}\n\n// 5) Construir bloque de usuario\nconst userBlock = `Pregunta 1: ${q1}\nPregunta 2: ${q2}\nPregunta 3: ${q3}\nPregunta 4: ${q4}\nPregunta 5: ${q5}`;\n\n// 6) Prompt del sistema resumido para n8n\nconst systemPrompt = `Eres Sin Nudo AI, una guía conversacional diseñada para ayudar a mujeres que enfrentan bloqueos asociados al síndrome del impostor, especialmente en contextos de desempleo, presión económica, dudas sobre su valor profesional y pérdida de autonomía.\n\nTu objetivo es analizar las respuestas de la usuaria, identificar el nudo principal, detectar si existe un nudo secundario, explicar el bloqueo con lenguaje claro, empático y no clínico, y entregar una recomendación accionable y realista.\n\nLos nudos posibles son:\n1. Nudo de la desvalorización del logro\n2. Nudo de la duda constante\n3. Nudo de la evitación de oportunidades\n4. Nudo de la presión económica\n5. Nudo de la aceptación por necesidad\n\nCada pregunta corresponde a un nudo específico:\n- Pregunta 1 → Nudo de la desvalorización del logro\n- Pregunta 2 → Nudo de la duda constante\n- Pregunta 3 → Nudo de la evitación de oportunidades\n- Pregunta 4 → Nudo de la presión económica\n- Pregunta 5 → Nudo de la aceptación por necesidad\n\nEscala:\n- Nunca = 0\n- A veces = 1\n- Frecuentemente = 2\n- Casi siempre = 3\n\nSi hay empate, prioriza en este orden:\n1. Nudo de la aceptación por necesidad\n2. Nudo de la presión económica\n3. Nudo de la evitación de oportunidades\n4. Nudo de la duda constante\n5. Nudo de la desvalorización del logro\n\nResponde en español con esta estructura exacta:\n\nNudo principal: [nombre del nudo]\n\nNudo secundario: [nombre del nudo o “No identificado”]\n\nInterpretación:\n[explica en 3 a 5 líneas qué refleja este resultado y cómo puede estar afectando sus decisiones]\n\nRecomendación accionable:\n- [acción 1]\n- [acción 2]\n- [acción 3]\n\nMensaje final:\n[un cierre breve, cálido y motivador, de máximo 2 líneas]`;\n\nreturn [\n  {\n    json: {\n      ok: true,\n      blocked: false,\n      q1,\n      q2,\n      q3,\n      q4,\n      q5,\n      userBlock,\n      requestBody: {\n        model: \"Qwen/Qwen2.5-7B-Instruct\",\n        messages: [\n          {\n            role: \"system\",\n            content: systemPrompt\n          },\n          {\n            role: \"user\",\n            content: userBlock\n          }\n        ],\n        temperature: 0.2\n      }\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "0d76df55-54a6-4141-b89e-b5ec0f6a8869",
+      "name": "Guardian AI"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.featherless.ai/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer rc_0ab96eeb805f9be47fa4cb0e35bfc01145078ed1f2b25beda140da01ae3fe03a"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "c7628cae-059b-4660-b614-ed206ddc2513",
+      "name": "LLM"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sin-nudo-diagnosis",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8ead8c4c-9125-4831-a211-93d349c59992",
+      "name": "Entrada",
+      "webhookId": "9dc3b2bb-3a17-41ba-97cf-dda2acc5613a"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"ok\": true,\n  \"diagnosis\": \"={{$json.choices[0].message.content}}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        608,
+        0
+      ],
+      "id": "1a41a529-e15d-47dc-8f93-2ad6947cc6e5",
+      "name": "Salida"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Guardian AI": {
+      "main": [
+        [
+          {
+            "node": "LLM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM": {
+      "main": [
+        [
+          {
+            "node": "Salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Entrada": {
+      "main": [
+        [
+          {
+            "node": "Guardian AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "8b812c75-b0a1-4f95-a899-b873a33f88cc",
+  "meta": {
+    "instanceId": "64dc84c5a7f5647846ce9c866e9baf0162e5103b547eddd702d3da89a4cb595e"
+  },
+  "id": "QGSVPnpTeV8nFhni",
+  "tags": []
+}
