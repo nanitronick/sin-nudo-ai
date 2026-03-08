@@ -1,6 +1,5 @@
 # SIN-NUDO AI by Nana
 
-## TL;DR
 
 Un asistente basado en IA diseñado para ayudar a identificar y desafiar el síndrome del impostor, una barrera invisible que limita el desarrollo profesional de muchas mujeres.
 
