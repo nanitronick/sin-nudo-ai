@@ -1,4 +1,4 @@
-# SIN-NUDO AI
+# SIN-NUDO AI by Nana
 
 ![SIN-NUDO AI](logo/imagen-readme.png)
 
@@ -36,7 +36,14 @@ IA
 Featherless AI (análisis de respuestas) - OK
 
 Seguridad  
-GuardianAI alineado de forma inicial con buenas prácticas OWASP para apps con LLM/GenAI — implementado a nivel MVP
+GuardianAI capa básica de validación y protección del flujo antes de la llamada al LLM.-OK
+
+--Controles Seguridad
+- validación estricta de entradas permitidas
+- bloqueo básico de patrones sospechosos
+- prevención de doble envío desde el frontend
+- salida segura en texto plano
+- consumo controlado del modelo para evitar abuso y costos innecesarios
 
 
 Salida-OK
