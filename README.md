@@ -1,5 +1,5 @@
 # SIN-NUDO AI by Nana
-Proyecto creado durante la hackathon #SheShips en el contexto del 8M. Construyendo tecnología con propósito 💗
+Proyecto creado durante la hackathon #SheShips en el contexto del 8M. Construyendo tecnología con propósito 💗 utilizando LLM pipeline + guardrail.
 
 ![SIN-NUDO AI](logo/demo.png)
 
