@@ -1,6 +1,6 @@
 # SIN-NUDO AI
 
-![SIN-NUDO AI](logo/sin-nudo-asistente.png)
+![SIN-NUDO AI](logo/imagen-readme.png)
 
 ## Problema
 
