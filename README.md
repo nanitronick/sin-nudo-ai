@@ -1,9 +1,12 @@
 # SIN-NUDO AI by Nana
 
-Un asistente IA que ayuda a desafiar el síndrome del impostor y abrir caminos de desarrollo profesional.
+## TL;DR
 
-Proyecto creado durante la hackathon #SheShips en el contexto del 8M.  
-Construyendo tecnología con propósito 💗
+Un asistente basado en IA diseñado para ayudar a identificar y desafiar el síndrome del impostor, una barrera invisible que limita el desarrollo profesional de muchas mujeres.
+
+A través de un juego breve de preguntas, el sistema analiza patrones de duda o autosabotaje y entrega recomendaciones orientadas al aprendizaje, empoderamiento y apertura de oportunidades profesionales.
+
+El proyecto fue desarrollado durante la hackathon #SheShips en el contexto del 8M, utilizando herramientas de IA y un flujo de orquestación que integra interfaz visual, análisis mediante LLM y una capa inicial de seguridad llamada GuardianAI.
 
 ![SIN-NUDO AI](logo/demo.png)
 
@@ -33,7 +36,7 @@ El MVP se presenta como un juego en el frontend que entrega el resultado del an�
 
 El MVP incluye una experiencia interactiva breve donde la usuaria responde un test de preguntas diseñado para identificar posibles patrones asociados al síndrome del impostor.
 
-A partir de las respuestas, el sistema genera un resultado que resume el tipo de bloqueo identificado y entrega recomendaciones orientadas a aprendizaje, desarrollo profesional o exploración de oportunidades.
+A partir de las respuestas, el sistema genera un resultado que resume el tipo de bloqueo identificado y entrega recomendaciones orientadas al aprendizaje, desarrollo profesional o exploración de oportunidades.
 
 El demo muestra:
 
