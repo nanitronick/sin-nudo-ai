@@ -4,11 +4,9 @@
 
 ## Problema
 
-Muchas mujeres enfrentan el síndrome del impostor: una barrera invisible que las lleva a dudar de sí mismas incluso cuando tienen todo el potencial para lograrlo.
+Muchas mujeres enfrentan el síndrome del impostor: una barrera invisible que las lleva a dudar de sí mismas incluso cuando tienen todo el potencial para lograrlo. Cuando esta duda se combina con el desempleo o la falta de oportunidades, puede generar dependencia económica y limitar la autonomía para tomar decisiones profesionales reales, llevando a aceptar caminos basados en la urgencia del momento y no en el verdadero valor de sus habilidades.
 
-Cuando esta duda se combina con el desempleo o la falta de oportunidades, puede generar dependencia económica y limitar la autonomía para tomar decisiones profesionales reales, llevando a aceptar caminos basados en la urgencia del momento y no en el verdadero valor de sus habilidades.
-
-Este contexto se conecta con problemáticas estructurales visibilizadas por el 8M, como las brechas profesionales y la desigualdad económica.
+Este contexto se conecta con problemáticas estructurales visibilizadas por el 8M, como las brechas profesionales y la desigualdad económica. 
 
 Así, el talento de muchas mujeres queda invisible no por falta de capacidad, sino por no contar con herramientas que las ayuden a reconocerlo y transformarlo en oportunidades.
 
