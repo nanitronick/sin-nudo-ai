@@ -25,16 +25,21 @@ Con base en estas respuestas, el sistema sugiere acciones concretas, cursos y ca
 ## Arquitectura del MVP
 
 Frontend  
-v0 (interfaz visual de la aplicación)
+v0 (interfaz visual de la aplicación/Form)
 
 Backend  
-n8n (orquestación de flujos)
+n8n workflow (orquestación de flujos)
+
+Guardian AI (validation)
 
 IA  
 Featherless AI (análisis de respuestas)
 
 Seguridad  
 GuardianAI (capa de protección del flujo)
+
+Salida
+Acciòn(Recomendaci`pn)
 
 ---
 
