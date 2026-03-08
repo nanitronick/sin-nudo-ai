@@ -27,30 +27,21 @@ Con base en estas respuestas, el sistema sugiere acciones concretas, cursos y ca
 
 ## Arquitectura del MVP 
 
-Frontend  
-v0 (interfaz visual de la aplicación/Form) - Pending
+Frontend  (entrada usuario)
+v0 (interfaz visual de la aplicación/Form)
 
 Backend  
-n8n workflow (orquestación de flujos) - OK
+n8n workflow (orquestación de flujos) 
 
-Guardian AI (validation) - OK
+Guardian AI (protecciòn) 
 
-IA  
-Featherless AI (análisis de respuestas) - OK
+LLM (consulta IA) 
 
 Seguridad  
 GuardianAI capa básica de validación y protección del flujo antes de la llamada al LLM.-OK
 
---Controles Seguridad
-- validación estricta de entradas permitidas
-- bloqueo básico de patrones sospechosos
-- prevención de doble envío desde el frontend
-- salida segura en texto plano
-- consumo controlado del modelo para evitar abuso y costos innecesarios
-
-
-Salida-OK
-Acciòn(Recomendaciòn)
+Salida
+Acciòn(recomendaciòn a la entrada del usuario)
 
 ---
 
