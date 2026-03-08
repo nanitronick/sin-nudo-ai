@@ -42,8 +42,6 @@ GuardianAI (capa de protección del flujo)
 
 ## Estado del proyecto
 
-En desarrollo de MVP.
+En desarrollo de MVP by Nana.
 
-Proyecto creado durante la hackathon #SheShips en el contexto del 8M.
-
-Construyendo tecnología con propósito 💗
+Proyecto creado durante la hackathon #SheShips en el contexto del 8M. Construyendo tecnología con propósito 💗
