@@ -1,4 +1,5 @@
 # SIN-NUDO AI by Nana
+Proyecto creado durante la hackathon #SheShips en el contexto del 8M. Construyendo tecnología con propósito 💗
 
 ![SIN-NUDO AI](logo/imagen-readme.png)
 
