@@ -98,3 +98,5 @@ Next step:
 - implementar el flujo backend en n8n  
 - ampliar los controles de seguridad del asistente Guardian  
 - realizar pruebas controladas de amenazas en la entrada del sistema
+
+Este es el primer paso de este caso de uso. Sin-Nudo AI busca identificar patrones asociados al síndrome del impostor, que en contextos como el desempleo pueden amplificarse. Esta base permitirá avanzar hacia Renacer AI, enfocado en la siguiente etapa: acompañar el proceso de tomar acción y reconstruir confianza.El objetivo no es reemplazar a profesionales de la salud o áreas asociadas, sino construirse como una IA segura 🔐, ética, legal y sostenible ♻️.
