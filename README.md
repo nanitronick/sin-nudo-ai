@@ -22,24 +22,25 @@ Con base en estas respuestas, el sistema sugiere acciones concretas, cursos y ca
 
 ---
 
-## Arquitectura del MVP
+## Arquitectura del MVP - Motor ok
 
 Frontend  
-v0 (interfaz visual de la aplicación/Form)
+v0 (interfaz visual de la aplicación/Form) - Pending
 
 Backend  
-n8n workflow (orquestación de flujos)
+n8n workflow (orquestación de flujos) - OK
 
-Guardian AI (validation)
+Guardian AI (validation) - OK
 
 IA  
-Featherless AI (análisis de respuestas)
+Featherless AI (análisis de respuestas) - OK
 
 Seguridad  
-GuardianAI (capa de protección del flujo)
+GuardianAI alineado de forma inicial con buenas prácticas OWASP para apps con LLM/GenAI — implementado a nivel MVP
 
-Salida
-Acciòn(Recomendaci`pn)
+
+Salida-OK
+Acciòn(Recomendaciòn)
 
 ---
 
