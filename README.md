@@ -22,7 +22,7 @@ Con base en estas respuestas, el sistema sugiere acciones concretas, cursos y ca
 
 ---
 
-## Arquitectura del MVP - Motor ok
+## Arquitectura del MVP 
 
 Frontend  
 v0 (interfaz visual de la aplicación/Form) - Pending
