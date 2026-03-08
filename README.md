@@ -14,6 +14,8 @@ Así, el talento de muchas mujeres queda invisible no por falta de capacidad, si
 
 ## Solución
 
+*****The product is a short interactive experience that helps women identify internal blocks related to impostor syndrome and receive an actionable recommendation to move forward professionally.
+
 SIN-NUDO AI es una herramienta educativa que ayuda a identificar bloqueos invisibles como la duda o el síndrome del impostor para transformarlos en apertura de caminos y oportunidades.
 
 A través de un juego tipo test, la aplicación realiza preguntas que permiten identificar patrones de duda, reconocer habilidades y detectar posibles barreras internas.
