@@ -4,7 +4,7 @@ Próximamente disponible.
 
 # SIN-NUDO AI
 
-![SIN-NUDO AI](assets/sinnudo-landing.png)
+![SIN-NUDO AI](logo/sin-nudo-asistente.png)
 
 Rompe tus dudas. Abre tu camino.
 
