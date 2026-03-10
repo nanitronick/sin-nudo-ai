@@ -92,6 +92,7 @@ Acción / recomendación → el sistema entrega un resumen del resultado identif
 ## Estado del proyecto
 
 MVP desarrollado como aplicación funcional en frontend durante la hackathon.
+LLM Pipelina + Guardrail
 
 Next step:
 
@@ -103,3 +104,9 @@ Este es el primer paso de este caso de uso. Sin-Nudo AI busca identificar patron
 
 Proyecto:
 https://devpost.com/software/sin-nudo-ai
+
+APP MV1:
+v0 - Pending publish
+
+App MV2:
+https://sin-nudoaibynana.lovable.app/
